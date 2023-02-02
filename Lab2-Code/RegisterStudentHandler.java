@@ -56,6 +56,14 @@ public class RegisterStudentHandler extends CommandEventHandler {
             }
         }
 
+        // check whether the course is overbooked or not
+        Course course = this.objDataBase.getCourseRecord(sCID, sSection);
+        if(course.getRegisteredStudents().size() >= 3) {
+            // don't prohibit registration, but announce the class is overbooked
+            this.objDataBase.makeARegistration(sSID, sCID, sSection);
+            return "Successful! WARNING: Course is currently overbooked";
+        }
+
         // Request validated. Proceed to register.
         this.objDataBase.makeARegistration(sSID, sCID, sSection);
         return "Successful!";

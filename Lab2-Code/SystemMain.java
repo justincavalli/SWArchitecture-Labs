@@ -84,6 +84,8 @@ class SystemMain {
 
 			ClientInput objClientInput = new ClientInput();
 			ClientOutput objClientOutput = new ClientOutput();
+			// create a component for the output log
+			Log log = new Log();		
 
 			// Start the system.
 			objClientInput.start();
