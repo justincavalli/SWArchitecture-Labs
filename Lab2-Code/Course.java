@@ -63,6 +63,11 @@ public class Course {
     protected ArrayList vRegistered;
 
     /**
+     * A course becomes overbooked when there are more students registered than this
+     */
+    protected int maxStudents;
+
+    /**
      * Constructs a course record by parsing the given string. The string <code>sInput</code> is
      * field-oriented and space-separated. The seven required fields are course ID, section, class
      * days, start time, stop time, instructor, and class name. Here is an example:
@@ -75,6 +80,9 @@ public class Course {
      */
     public Course(String sInput)
     {
+        // For this assignment, courses are overbooked after more than 3 registrations
+        this.maxStudents = 3;
+
         // Prepare to tokenize the input string.
         StringTokenizer objTokenizer = new StringTokenizer(sInput);
 
@@ -154,6 +162,15 @@ public class Course {
       */
     public String getName() {
         return this.sName;
+    }
+
+    /**
+      * Return the max # of students for this course record.
+      *
+      * @return the max # of students fpr this course record
+      */
+      public int getMaxStudents() {
+        return this.maxStudents;
     }
 
     /**
