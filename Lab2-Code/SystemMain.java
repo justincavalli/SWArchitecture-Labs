@@ -76,7 +76,12 @@ class SystemMain {
 					db,
 					EventBus.EV_LIST_COURSES_COMPLETED,
 					EventBus.EV_SHOW);
-			RegisterStudentHandler objCommandEventHandler6 =
+			RegistrationConflictHandler objCommandEventHandler6 =
+				new RegistrationConflictHandler(
+					db, 
+					EventBus.EV_CHECK_REGISTER_CONFLICT, 
+					EventBus.EV_SHOW);
+			RegisterStudentHandler objCommandEventHandler7 =
 				new RegisterStudentHandler(
 					db,
 					EventBus.EV_REGISTER_STUDENT,

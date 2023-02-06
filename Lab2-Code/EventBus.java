@@ -66,9 +66,14 @@ public class EventBus {
     public static final int EV_LIST_COURSES_COMPLETED = 5;
 
     /**
-     * Command event #6 definition: register a student for a course. 
+     * Command event #6 definition: check course conflicts. 
      */
-    public static final int EV_REGISTER_STUDENT = 6;
+    public static final int EV_CHECK_REGISTER_CONFLICT = 6;
+
+    /**
+     * Command event #7 definition: register a student for a course. 
+     */
+    public static final int EV_REGISTER_STUDENT = 7;
 
     /**
      * The number of defined events.

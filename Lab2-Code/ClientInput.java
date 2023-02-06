@@ -109,9 +109,10 @@ public class ClientInput extends Thread {
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course section and press return >> ");
                     String sSection = objReader.readLine().trim();
 
-                    // Announce the command event #5 with student ID, course ID, and course section.
+                    // Announce the command event #6 with student ID, course ID, and course section.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
-                    EventBus.announce(EventBus.EV_REGISTER_STUDENT, sSID + " " + sCID + " " + sSection);
+                    // Check for registration conflicts before registration is done
+                    EventBus.announce(EventBus.EV_CHECK_REGISTER_CONFLICT, sSID + " " + sCID + " " + sSection);
                     continue;
                 }
 
